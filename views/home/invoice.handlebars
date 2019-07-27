@@ -1,0 +1,34 @@
+<h1>
+    My Invoices
+</h1>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Code</th>
+        <th>Store</th>
+        <th>status</th>
+        <th>netPrice</th>
+        <th>decPrice</th>
+        <th>incPrice</th>
+        <th>totalPrice</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {{#each invoices}}
+        <tr>
+            <td><a href="/home/invoices/edit/{{id}}">{{code}}</a></td>
+            <td>{{store.name}}</td>
+            <td>{{status}}</td>
+            <td>{{netPrice}}</td>
+            <td>{{decPrice}}</td>
+            <td>{{incPrice}}</td>
+            <td>{{totalPrice}}</td>
+            <td>{{generateDate date 'MMMM DD'}}</td>
+            <td><a href="/home/invoices/edit/{{id}}" class="btn btn-info">View</a></td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
